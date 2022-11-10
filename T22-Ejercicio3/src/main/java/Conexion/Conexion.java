@@ -97,13 +97,13 @@ public class Conexion {
 			System.out.println("Inserted data complete!");
 		}
 		
-		public void updateData(String db, String table_name, String modif_columna, String campo_cambiado, String condicion) throws SQLException {
+		public void updateData(String db, String table_name, String modif_columna, String campo_cambiado, String condicion, String primaryKey) throws SQLException {
 		    try {
 	            String Queryd = "USE "+db+";";
 	            Statement stdb = connect.createStatement();
 	            stdb.executeUpdate(Queryd);
 
-	            String Query = "UPDATE "+table_name+" SET "+ modif_columna +" = '"+campo_cambiado+"' WHERE id = "+condicion;
+	            String Query = "UPDATE "+table_name+" SET "+ modif_columna +" = '"+campo_cambiado+"' WHERE "+primaryKey+" = "+condicion;
 	            System.out.println(Query);
 	            Statement st = connect.createStatement();
 	            st.executeUpdate(Query);

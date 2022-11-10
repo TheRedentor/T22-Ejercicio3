@@ -38,18 +38,35 @@ public class ControladorCientifico implements ActionListener {
 			vista.vista_cientifico.setVisible(true);
 			vista.vista_proyecto.setVisible(false);
 			vista.vista_asignado_a.setVisible(false);
+
+			vista.cientificoButton.setVisible(false);
+			vista.proyectoButton.setVisible(false);
+			vista.asignadoAButton.setVisible(false);
+			
+			vista.boton_create_cientifico.setVisible(true);
+			vista.boton_update_cientifico.setVisible(true);
+			vista.boton_read_cientifico.setVisible(true);
+			vista.boton_delete_cientifico.setVisible(true);
 		}
 		
 		if (vista.proyectoButton == evento.getSource()) {
 			vista.vista_cientifico.setVisible(false);
 			vista.vista_proyecto.setVisible(true);
 			vista.vista_asignado_a.setVisible(false);
+
+			vista.cientificoButton.setVisible(false);
+			vista.proyectoButton.setVisible(false);
+			vista.asignadoAButton.setVisible(false);
 		}
 		
-		if (vista.cientificoButton == evento.getSource()) {
+		if (vista.asignadoAButton == evento.getSource()) {
 			vista.vista_cientifico.setVisible(false);
 			vista.vista_proyecto.setVisible(false);
 			vista.vista_asignado_a.setVisible(true);
+			
+			vista.cientificoButton.setVisible(false);
+			vista.proyectoButton.setVisible(false);
+			vista.asignadoAButton.setVisible(false);
 		}
 		
 		if(vista.boton_create_cientifico == evento.getSource()) {
@@ -57,9 +74,7 @@ public class ControladorCientifico implements ActionListener {
 				vista.vista_create_cientifico.setVisible(true);
 				vista.vista_delete_cientifico.setVisible(false);
 				vista.vista_update_cientifico.setVisible(false);
-				vista.vista_read_cientifico.setVisible(false);
-				
-				
+				vista.vista_read_cientifico.setVisible(false);			
 			} catch (Exception e) {
 				System.out.println(e);
 			}
@@ -107,61 +122,48 @@ public class ControladorCientifico implements ActionListener {
 		}
 		
 		if(vista.boton_guardar_cientifico == evento.getSource()) {
-			String nombre,apellido,fecha,direccion;
-			int dni;
+			String dni,nom_apels;
 			
-			dni=this.vista.createNombreField.getText();
-			apellido=this.vista.createApellidoField.getText();
-			direccion = this.vista.createDireccionField.getText();
-			dni=Integer.parseInt(this.vista.createDniField.getText());
-			fecha=this.vista.createFechaField.getText();
+			dni=this.vista.createDniField.getText();
+			nom_apels=this.vista.createNomApelsField.getText();
 			try {
-				this.modelo.create(nombre, apellido, direccion, dni, fecha);
+				this.cientifico.create(dni, nom_apels);
 			} catch (FileNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			this.vista.vista_create.setVisible(false);
+			this.vista.vista_create_cientifico.setVisible(false);
 		}
 		
-		if(vista.boton_guardar1 == evento.getSource()) {
+		if(vista.boton_guardar1_cientifico == evento.getSource()) {
 			
-			String nombre,apellido,fecha,direccion,id;
-			int dni;
+			String dni,nom_apels;
 			
-			nombre=this.vista.editNombreField.getText();
-			apellido=this.vista.editApellidoField.getText();
-			direccion = this.vista.editDireccionField.getText();
-			dni=Integer.parseInt(this.vista.editDniField.getText());
-			fecha=this.vista.editFechaField.getText();
-			id=this.vista.editIdField.getText();
+			dni=this.vista.editDniField.getText();
+			nom_apels=this.vista.editNomApelsField.getText();
 			
 			try {
-				this.modelo.update("nombre",nombre,id);
-				this.modelo.update("apellido",apellido,id);
-				this.modelo.update("direccion",direccion,id);
-				this.modelo.update("dni", String.valueOf(dni),id);
-				this.modelo.update("fecha",fecha,id);
+				this.cientifico.update("nom_apels",nom_apels,dni,"dni");
 			} catch (FileNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
-			this.vista.vista_update.setVisible(false);
+			this.vista.vista_update_cientifico.setVisible(false);
 		}
 		
-		if(vista.boton_borrar == evento.getSource()) {
+		if(vista.boton_borrar_cientifico == evento.getSource()) {
 			
-			int id;
+			String dni;
 		
-			id=Integer.parseInt(this.vista.deleteIdField.getText());
+			dni=this.vista.deleteDniField.getText();
 			try {
-				this.modelo.delete(id,"id");
+				this.cientifico.delete(dni,"dni");
 			} catch (FileNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			this.vista.vista_delete.setVisible(false);
+			this.vista.vista_delete_cientifico.setVisible(false);
 		}
 	}
 }

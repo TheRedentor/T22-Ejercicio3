@@ -38,9 +38,9 @@ public class Cientifico {
 		return text;
 	}
 	
-	public void update(String campo, String campo_cambiado, String condicion) throws FileNotFoundException, SQLException {
+	public void update(String campo, String campo_cambiado, String condicion, String primaryKey) throws FileNotFoundException, SQLException {
 		conexion.create_connection();
-		conexion.updateData("T22_3","Cientifico",campo,campo_cambiado,condicion);
+		conexion.updateData("T22_3","Cientifico",campo,campo_cambiado,condicion,primaryKey);
 		conexion.closeConnection();
 	}
 	
