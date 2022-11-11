@@ -49,27 +49,6 @@ public class ControladorCientifico implements ActionListener {
 			vista.boton_delete_cientifico.setVisible(true);
 		}
 		
-		if (vista.proyectoButton == evento.getSource()) {
-			vista.vista_cientifico.setVisible(false);
-			vista.vista_proyecto.setVisible(true);
-			vista.vista_asignado_a.setVisible(false);
-
-			vista.cientificoButton.setVisible(false);
-			vista.proyectoButton.setVisible(false);
-			vista.asignadoAButton.setVisible(false);
-		}
-		
-		if (vista.asignadoAButton == evento.getSource()) {
-			vista.vista_cientifico.setVisible(false);
-			vista.vista_proyecto.setVisible(false);
-			vista.vista_asignado_a.setVisible(true);
-			
-			vista.cientificoButton.setVisible(false);
-			vista.proyectoButton.setVisible(false);
-			vista.asignadoAButton.setVisible(false);
-		}
-		
-		
 		if(vista.boton_create_cientifico == evento.getSource()) {
 			try {
 				vista.vista_create_cientifico.setVisible(true);

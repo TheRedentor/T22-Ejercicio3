@@ -26,8 +26,8 @@ public class mainApp {
     	Vista vista = new Vista();
     	vista.setVisible(true);
     	
-    	ControladorProyecto controlador_proyecto = new ControladorProyecto(proyecto, vista);
     	ControladorCientifico controlador_cientifico = new ControladorCientifico(cientifico, vista);
+    	ControladorProyecto controlador_proyecto = new ControladorProyecto(proyecto, vista);
 	}
 
 }

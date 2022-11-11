@@ -35,31 +35,22 @@ public class ControladorProyecto implements ActionListener {
 
 	
 	public void actionPerformed(ActionEvent evento) {
-		if (vista.cientificoButton == evento.getSource()) {
-			vista.vista_cientifico.setVisible(true);
-			vista.vista_proyecto.setVisible(false);
-			vista.vista_asignado_a.setVisible(false);
-		}
-		
 		if (vista.proyectoButton == evento.getSource()) {
 			vista.vista_cientifico.setVisible(false);
 			vista.vista_proyecto.setVisible(true);
 			vista.vista_asignado_a.setVisible(false);
 			
+			
+			//TODOS LOS BOTONES EN TRUE
 			vista.boton_create_proyecto.setVisible(true);
 			vista.boton_delete_proyecto.setVisible(true);
 			vista.boton_read_proyecto.setVisible(true);
 			vista.boton_update_proyecto.setVisible(true);
-			vista.boton_borrar_proyecto.setVisible(true);
-			vista.boton_salir_proyecto.setVisible(true);
-			vista.boton_guardar_proyecto.setVisible(true);
-			vista.boton_guardar1_proyecto.setVisible(true);
-		}
-		
-		if (vista.cientificoButton == evento.getSource()) {
-			vista.vista_cientifico.setVisible(false);
-			vista.vista_proyecto.setVisible(false);
-			vista.vista_asignado_a.setVisible(true);
+			
+			//Los principales en false
+			vista.cientificoButton.setVisible(false);
+			vista.proyectoButton.setVisible(false);
+			vista.asignadoAButton.setVisible(false);
 		}
 		
 		if(vista.boton_create_proyecto == evento.getSource()) {
