@@ -35,9 +35,9 @@ public class Asignado_a {
 		return text;
 	}
 	
-	public void update(String campo, String campo_cambiado, String condicion) throws FileNotFoundException, SQLException {
+	public void update(String campo, String campo_cambiado, String condicion, String primaryKey) throws FileNotFoundException, SQLException {
 		conexion.create_connection();
-		conexion.updateData("T22_3","Asignado_a",campo,campo_cambiado,condicion);
+		conexion.updateData("T22_3","Asignado_a",campo,campo_cambiado,condicion,primaryKey);
 		conexion.closeConnection();
 	}
 	
@@ -53,6 +53,6 @@ public class Asignado_a {
 		conexion.createDB("T22_3");
 		conexion.createTable("T22_3", "CREATE TABLE Asignado_a (cientifico_dni CHAR(8), proyecto_id CHAR(4), PRIMARY KEY (cientifico_dni, proyecto_id), FOREIGN KEY (cientifico_dni) REFERENCES Cientifico(dni) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (proyecto_id) REFERENCES Proyecto(id) ON DELETE CASCADE ON UPDATE CASCADE)");
 		conexion.closeConnection();
-
+		
 	}
 }
