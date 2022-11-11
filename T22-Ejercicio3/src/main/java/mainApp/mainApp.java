@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
 import Controlador.ControladorCientifico;
+import Controlador.ControladorProyecto;
 import Modelo.Asignado_a;
 import Modelo.Cientifico;
 import Modelo.Proyecto;
@@ -25,6 +26,7 @@ public class mainApp {
     	Vista vista = new Vista();
     	vista.setVisible(true);
     	
+    	ControladorProyecto controlador_proyecto = new ControladorProyecto(proyecto, vista);
     	ControladorCientifico controlador_cientifico = new ControladorCientifico(cientifico, vista);
 	}
 
