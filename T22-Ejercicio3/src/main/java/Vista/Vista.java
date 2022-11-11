@@ -58,6 +58,9 @@ public class Vista extends JFrame {
 	public JPanel vista_proyecto;
 	public JPanel vista_asignado_a;
 
+	public JTextField dni_cientifico_antiguo;
+	public JTextField id_proyecto_antiguo;
+
 	public Vista() {
 		
 		setTitle("Registro clientes");
@@ -256,10 +259,193 @@ public class Vista extends JFrame {
 		separator1.setOrientation(SwingConstants.VERTICAL);
 		
 		vista_create_proyecto.setVisible(false);
+		vista_asignado_a = new JPanel();
 		
-		asignadoAButton = new JButton("Asignado a");
-		asignadoAButton.setBounds(271, 280, 89, 23);
-		vista_escoger.add(asignadoAButton);
+		
+		// BOTONES PANEL GENERAL ASIGNADO_A
+		
+		boton_update_asignado_a = new JButton("Actualizar asignado");
+		boton_update_asignado_a.setBounds(48, 149, 117, 23);
+		vista_asignado_a.add(boton_update_asignado_a);
+		boton_update_asignado_a.setVisible(false);
+		
+		boton_delete_asignado_a = new JButton("Eliminar asignado");
+		boton_delete_asignado_a.setBounds(48, 312, 107, 23);
+		vista_asignado_a.add(boton_delete_asignado_a);
+		boton_delete_asignado_a.setVisible(false);
+		
+		boton_read_asignado_a = new JButton("Mostrar registro");
+		boton_read_asignado_a.setBounds(48, 200, 109, 23);
+		vista_asignado_a.add(boton_read_asignado_a);
+		boton_read_asignado_a.setVisible(false);
+		
+		boton_create_asignado_a = new JButton("Crear asignado");
+		boton_create_asignado_a.setBounds(48, 254, 97, 23);
+		vista_asignado_a.add(boton_create_asignado_a);
+		boton_create_asignado_a.setVisible(false);
+		
+		
+		
+		
+		
+		//ELEMENTOS VISTA UPDATE ASIGNADO_A
+		
+		vista_update_asignado_a = new JPanel();
+		//vista_update.setVisible(false);
+		vista_update_asignado_a.setLayout(null);
+		vista_update_asignado_a.setBorder(new EmptyBorder(5, 5, 5, 5));
+		vista_update_asignado_a.setBounds(0, 0, 627, 529);
+		vista_asignado_a.add(vista_update_asignado_a);
+		
+		editCientificoDniField = new JTextField();
+		editCientificoDniField.setBounds(361, 55, 86, 20);
+		vista_update_asignado_a.add(editCientificoDniField);
+		editCientificoDniField.setColumns(10);
+		
+		JLabel label18 = new JLabel("DNI Científico");
+		label18.setBounds(361, 30, 115, 14);
+		vista_update_asignado_a.add(label18);
+		
+		editProyectoIdField = new JTextField();
+		editProyectoIdField.setBounds(361, 111, 86, 20);
+		vista_update_asignado_a.add(editProyectoIdField);
+		editProyectoIdField.setColumns(10);
+		
+		JLabel label19 = new JLabel("ID Proyecto");
+		label19.setBounds(361, 86, 115, 14);
+		vista_update_asignado_a.add(label19);
+		
+		boton_guardar1_asignado_a = new JButton("Guardar");
+		boton_guardar1_asignado_a.setBounds(415, 299, 147, 73);
+		vista_update_asignado_a.add(boton_guardar1_asignado_a);
+		
+		dni_cientifico_antiguo = new JTextField();
+		dni_cientifico_antiguo.setBounds(361, 173, 86, 20);
+		vista_update_asignado_a.add(dni_cientifico_antiguo);
+		dni_cientifico_antiguo.setColumns(10);
+		
+		id_proyecto_antiguo = new JTextField();
+		id_proyecto_antiguo.setBounds(361, 226, 86, 20);
+		vista_update_asignado_a.add(id_proyecto_antiguo);
+		id_proyecto_antiguo.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("DNI Antiguo");
+		lblNewLabel_2.setBounds(361, 148, 133, 14);
+		vista_update_asignado_a.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Id Proyecto Antiguo");
+		lblNewLabel_3.setBounds(361, 201, 115, 14);
+		vista_update_asignado_a.add(lblNewLabel_3);
+		
+		vista_update_asignado_a.setVisible(false);
+		
+		
+		
+		//// ELEMENTOS VISTA_DELETE ASIGNADO_A
+		
+		
+		vista_delete_asignado_a = new JPanel();
+		//vista_delete.setVisible(false);
+		vista_delete_asignado_a.setLayout(null);
+		vista_delete_asignado_a.setBorder(new EmptyBorder(5, 5, 5, 5));
+		vista_delete_asignado_a.setBounds(0, 0, 627, 529);
+		vista_asignado_a.add(vista_delete_asignado_a);
+		
+		JLabel lblDniCambio = new JLabel("DNI Cientifico");
+		lblDniCambio.setBounds(461, 44, 99, 14);
+		vista_delete_asignado_a.add(lblDniCambio);
+		
+		deleteCientificoDniField = new JTextField();
+		deleteCientificoDniField.setColumns(10);
+		deleteCientificoDniField.setBounds(461, 69, 86, 20);
+		vista_delete_asignado_a.add(deleteCientificoDniField);
+		
+		JLabel lblIdProyectoCambio = new JLabel("ID Proyecto");
+		lblIdProyectoCambio.setBounds(461, 103, 99, 14);
+		vista_delete_asignado_a.add(lblIdProyectoCambio);
+		
+		deleteProyectoIdField = new JTextField();
+		deleteProyectoIdField.setColumns(10);
+		deleteProyectoIdField.setBounds(461, 128, 86, 20);
+		vista_delete_asignado_a.add(deleteProyectoIdField);
+		
+		boton_borrar_asignado_a = new JButton("Borrar");
+		boton_borrar_asignado_a.setBounds(362, 313, 147, 73);
+		vista_delete_asignado_a.add(boton_borrar_asignado_a);
+		
+		vista_delete_asignado_a.setVisible(false);
+		
+		
+		
+		
+		/// ELEMENTOS VISTA_READ ASIGNADO_A
+		
+		vista_read_asignado_a = new JPanel();
+		//vista_read.setVisible(false);
+		vista_read_asignado_a.setLayout(null);
+		vista_read_asignado_a.setBorder(new EmptyBorder(5, 5, 5, 5));
+		vista_read_asignado_a.setBounds(0, 0, 627, 529);
+		vista_asignado_a.add(vista_read_asignado_a);
+		
+		textAreaAsignadoA = new JTextArea();
+		textAreaAsignadoA.setBounds(288, 24, 315, 289);
+		vista_read_asignado_a.add(textAreaAsignadoA);
+		
+		boton_salir_asignado_a = new JButton("Salir");
+		boton_salir_asignado_a.setBounds(365, 323, 147, 73);
+		vista_read_asignado_a.add(boton_salir_asignado_a);
+		
+		vista_read_asignado_a.setVisible(false);
+		
+		
+		
+		
+		
+		// ELEMENTOS VISTA CREATE ASIGNADO_A
+		
+		vista_create_asignado_a = new JPanel();
+		vista_create_asignado_a.setLayout(null);
+		vista_create_asignado_a.setBorder(new EmptyBorder(5, 5, 5, 5));
+		vista_create_asignado_a.setBounds(0, 0, 627, 529);
+		vista_asignado_a.add(vista_create_asignado_a);
+		
+		createCientificoDniField = new JTextField();
+		createCientificoDniField.setBounds(387, 83, 86, 20);
+		vista_create_asignado_a.add(createCientificoDniField);
+		createCientificoDniField.setColumns(10);
+		
+		JLabel lblNewLabel_16 = new JLabel("DNI Científico");
+		lblNewLabel_16.setBounds(387, 58, 46, 14);
+		vista_create_asignado_a.add(lblNewLabel_16);
+		
+		createProyectoIdField = new JTextField();
+		createProyectoIdField.setBounds(387, 151, 86, 20);
+		vista_create_asignado_a.add(createProyectoIdField);
+		createProyectoIdField.setColumns(10);
+		
+		JLabel lblNewLabel_17 = new JLabel("ID Proyecto");
+		lblNewLabel_17.setBounds(387, 126, 46, 14);
+		vista_create_asignado_a.add(lblNewLabel_17);
+		
+		boton_guardar_asignado_a = new JButton("Guardar");
+		boton_guardar_asignado_a.setBounds(404, 376, 124, 46);
+		vista_create_asignado_a.add(boton_guardar_asignado_a);
+		
+		JLabel lblNewLabel_18 = new JLabel("Nuevo asignado");
+		lblNewLabel_18.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_18.setBounds(451, 25, 91, 14);
+		vista_create_asignado_a.add(lblNewLabel_18);
+		
+		JSeparator separator2 = new JSeparator();
+		separator2.setBounds(320, 11, 40, 406);
+		vista_create_asignado_a.add(separator2);
+		separator2.setOrientation(SwingConstants.VERTICAL);
+		
+		vista_create_asignado_a.setVisible(false);
+		
+		proyectoButton = new JButton("Proyecto");
+		proyectoButton.setBounds(271, 210, 89, 23);
+		vista_escoger.add(proyectoButton);
 		
 		
 		// BOTONES ESCOGER
@@ -268,9 +454,23 @@ public class Vista extends JFrame {
 		cientificoButton.setBounds(271, 149, 89, 23);
 		vista_escoger.add(cientificoButton);
 		
-		proyectoButton = new JButton("Proyecto");
-		proyectoButton.setBounds(271, 210, 89, 23);
-		vista_escoger.add(proyectoButton);
+		asignadoAButton = new JButton("Asignado a");
+		asignadoAButton.setBounds(271, 280, 89, 23);
+		vista_escoger.add(asignadoAButton);
+		
+		JLabel lblNewLabel_11 = new JLabel("Opciones: ");
+		lblNewLabel_11.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_11.setBounds(452, 50, 57, 14);
+		vista_asignado_a.add(lblNewLabel_11);
+		
+		JLabel lblNewLabel_24 = new JLabel("REGISTRO DE ASIGNADOS");
+		lblNewLabel_24.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_24.setBounds(242, 33, 143, 16);
+		vista_asignado_a.add(lblNewLabel_24);
+		
+		vista_asignado_a.setBounds(0, 0, 627, 529);
+		vista_escoger.add(vista_asignado_a);
+		vista_asignado_a.setLayout(null);
 		
 		vista_proyecto.setBounds(0, 0, 627, 529);
 		vista_escoger.add(vista_proyecto);
@@ -450,185 +650,6 @@ public class Vista extends JFrame {
 		vista_cientifico.setBounds(0, 0, 627, 529);
 		vista_escoger.add(vista_cientifico);
 		vista_cientifico.setLayout(null);
-		vista_asignado_a = new JPanel();
-		
-		boton_create_asignado_a = new JButton("Crear asignado");
-		boton_create_asignado_a.setBounds(48, 254, 97, 23);
-		vista_asignado_a.add(boton_create_asignado_a);
-		boton_create_asignado_a.setVisible(false);
-		
-		boton_read_asignado_a = new JButton("Mostrar registro");
-		boton_read_asignado_a.setBounds(48, 200, 109, 23);
-		vista_asignado_a.add(boton_read_asignado_a);
-		boton_read_asignado_a.setVisible(false);
-		
-		boton_delete_asignado_a = new JButton("Eliminar asignado");
-		boton_delete_asignado_a.setBounds(48, 312, 107, 23);
-		vista_asignado_a.add(boton_delete_asignado_a);
-		boton_delete_asignado_a.setVisible(false);
-		
-		
-		// BOTONES PANEL GENERAL ASIGNADO_A
-		
-		boton_update_asignado_a = new JButton("Actualizar asignado");
-		boton_update_asignado_a.setBounds(48, 149, 117, 23);
-		vista_asignado_a.add(boton_update_asignado_a);
-		boton_update_asignado_a.setVisible(false);
-		
-		
-		
-		//// ELEMENTOS VISTA_DELETE ASIGNADO_A
-		
-		
-		vista_delete_asignado_a = new JPanel();
-		//vista_delete.setVisible(false);
-		vista_delete_asignado_a.setLayout(null);
-		vista_delete_asignado_a.setBorder(new EmptyBorder(5, 5, 5, 5));
-		vista_delete_asignado_a.setBounds(0, 0, 627, 529);
-		vista_asignado_a.add(vista_delete_asignado_a);
-		
-		JLabel label_id_13 = new JLabel("DNI Científico");
-		label_id_13.setBounds(461, 44, 46, 14);
-		vista_delete_asignado_a.add(label_id_13);
-		
-		deleteCientificoDniField = new JTextField();
-		deleteCientificoDniField.setColumns(10);
-		deleteCientificoDniField.setBounds(461, 69, 86, 20);
-		vista_delete_asignado_a.add(deleteCientificoDniField);
-		
-		JLabel label_id_14 = new JLabel("ID Proyecto");
-		label_id_14.setBounds(461, 103, 46, 14);
-		vista_delete_asignado_a.add(label_id_14);
-		
-		deleteProyectoIdField = new JTextField();
-		deleteProyectoIdField.setColumns(10);
-		deleteProyectoIdField.setBounds(461, 128, 86, 20);
-		vista_delete_asignado_a.add(deleteProyectoIdField);
-		
-		boton_borrar_asignado_a = new JButton("Borrar");
-		boton_borrar_asignado_a.setBounds(362, 313, 147, 73);
-		vista_delete_asignado_a.add(boton_borrar_asignado_a);
-		
-		vista_delete_asignado_a.setVisible(false);
-		
-		
-		
-		
-		/// ELEMENTOS VISTA_READ ASIGNADO_A
-		
-		vista_read_asignado_a = new JPanel();
-		//vista_read.setVisible(false);
-		vista_read_asignado_a.setLayout(null);
-		vista_read_asignado_a.setBorder(new EmptyBorder(5, 5, 5, 5));
-		vista_read_asignado_a.setBounds(0, 0, 627, 529);
-		vista_asignado_a.add(vista_read_asignado_a);
-		
-		textAreaAsignadoA = new JTextArea();
-		textAreaAsignadoA.setBounds(288, 24, 315, 289);
-		vista_read_asignado_a.add(textAreaAsignadoA);
-		
-		boton_salir_asignado_a = new JButton("Salir");
-		boton_salir_asignado_a.setBounds(365, 323, 147, 73);
-		vista_read_asignado_a.add(boton_salir_asignado_a);
-		
-		vista_read_asignado_a.setVisible(false);
-		
-		
-		
-		
-		
-		//ELEMENTOS VISTA UPDATE ASIGNADO_A
-		
-		vista_update_asignado_a = new JPanel();
-		//vista_update.setVisible(false);
-		vista_update_asignado_a.setLayout(null);
-		vista_update_asignado_a.setBorder(new EmptyBorder(5, 5, 5, 5));
-		vista_update_asignado_a.setBounds(0, 0, 627, 529);
-		vista_asignado_a.add(vista_update_asignado_a);
-		
-		editCientificoDniField = new JTextField();
-		editCientificoDniField.setBounds(361, 55, 86, 20);
-		vista_update_asignado_a.add(editCientificoDniField);
-		editCientificoDniField.setColumns(10);
-		
-		JLabel label18 = new JLabel("DNI Científico");
-		label18.setBounds(361, 30, 46, 14);
-		vista_update_asignado_a.add(label18);
-		
-		editProyectoIdField = new JTextField();
-		editProyectoIdField.setBounds(361, 111, 86, 20);
-		vista_update_asignado_a.add(editProyectoIdField);
-		editProyectoIdField.setColumns(10);
-		
-		JLabel label19 = new JLabel("ID Proyecto");
-		label19.setBounds(361, 86, 46, 14);
-		vista_update_asignado_a.add(label19);
-		
-		boton_guardar1_asignado_a = new JButton("Guardar");
-		boton_guardar1_asignado_a.setBounds(415, 299, 147, 73);
-		vista_update_asignado_a.add(boton_guardar1_asignado_a);
-		
-		vista_update_asignado_a.setVisible(false);
-		
-		
-		
-		
-		
-		// ELEMENTOS VISTA CREATE ASIGNADO_A
-		
-		vista_create_asignado_a = new JPanel();
-		vista_create_asignado_a.setLayout(null);
-		vista_create_asignado_a.setBorder(new EmptyBorder(5, 5, 5, 5));
-		vista_create_asignado_a.setBounds(0, 0, 627, 529);
-		vista_asignado_a.add(vista_create_asignado_a);
-		
-		createCientificoDniField = new JTextField();
-		createCientificoDniField.setBounds(387, 83, 86, 20);
-		vista_create_asignado_a.add(createCientificoDniField);
-		createCientificoDniField.setColumns(10);
-		
-		JLabel lblNewLabel_16 = new JLabel("DNI Científico");
-		lblNewLabel_16.setBounds(387, 58, 46, 14);
-		vista_create_asignado_a.add(lblNewLabel_16);
-		
-		createProyectoIdField = new JTextField();
-		createProyectoIdField.setBounds(387, 151, 86, 20);
-		vista_create_asignado_a.add(createProyectoIdField);
-		createProyectoIdField.setColumns(10);
-		
-		JLabel lblNewLabel_17 = new JLabel("ID Proyecto");
-		lblNewLabel_17.setBounds(387, 126, 46, 14);
-		vista_create_asignado_a.add(lblNewLabel_17);
-		
-		boton_guardar_asignado_a = new JButton("Guardar");
-		boton_guardar_asignado_a.setBounds(404, 376, 124, 46);
-		vista_create_asignado_a.add(boton_guardar_asignado_a);
-		
-		JLabel lblNewLabel_18 = new JLabel("Nuevo asignado");
-		lblNewLabel_18.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_18.setBounds(451, 25, 91, 14);
-		vista_create_asignado_a.add(lblNewLabel_18);
-		
-		JSeparator separator2 = new JSeparator();
-		separator2.setBounds(320, 11, 40, 406);
-		vista_create_asignado_a.add(separator2);
-		separator2.setOrientation(SwingConstants.VERTICAL);
-		
-		vista_create_asignado_a.setVisible(false);
-		
-		JLabel lblNewLabel_11 = new JLabel("Opciones: ");
-		lblNewLabel_11.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_11.setBounds(452, 50, 57, 14);
-		vista_asignado_a.add(lblNewLabel_11);
-		
-		JLabel lblNewLabel_24 = new JLabel("REGISTRO DE ASIGNADOS");
-		lblNewLabel_24.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_24.setBounds(242, 33, 143, 16);
-		vista_asignado_a.add(lblNewLabel_24);
-		
-		vista_asignado_a.setBounds(0, 0, 627, 529);
-		vista_escoger.add(vista_asignado_a);
-		vista_asignado_a.setLayout(null);
 		
 		
 	}

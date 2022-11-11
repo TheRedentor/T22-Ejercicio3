@@ -30,14 +30,14 @@ public class Asignado_a {
 	
 	public ArrayList<String> read() throws SQLException, FileNotFoundException {
 		conexion.create_connection();
-		ArrayList<String> text = conexion.readDataProyecto("T22_3","Asignado_a");
+		ArrayList<String> text = conexion.readDataAsignadoA("T22_3","Asignado_a");
 		conexion.closeConnection();
 		return text;
 	}
 	
-	public void update(String campo, String campo_cambiado, String condicion, String primaryKey) throws FileNotFoundException, SQLException {
+	public void update(String campo, String campo_cambiado, String condicion, String primaryKey, String secondPrimaryKey, String condicion2) throws FileNotFoundException, SQLException {
 		conexion.create_connection();
-		conexion.updateData("T22_3","Asignado_a",campo,campo_cambiado,condicion,primaryKey);
+		conexion.updateDataAsignado("T22_3","Asignado_a",campo,campo_cambiado,condicion,primaryKey,secondPrimaryKey,condicion2);
 		conexion.closeConnection();
 	}
 	

@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import Controlador.ControladorCientifico;
 import Controlador.ControladorProyecto;
+import Controlador.ControladorAsignadoA;
 import Modelo.Asignado_a;
 import Modelo.Cientifico;
 import Modelo.Proyecto;
@@ -28,6 +29,7 @@ public class mainApp {
     	
     	ControladorCientifico controlador_cientifico = new ControladorCientifico(cientifico, vista);
     	ControladorProyecto controlador_proyecto = new ControladorProyecto(proyecto, vista);
+    	ControladorAsignadoA controlador_asignado_a = new ControladorAsignadoA(asignado_a, vista);
 	}
 
 }

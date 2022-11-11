@@ -114,6 +114,24 @@ public class Conexion {
 	        }
 		}
 		
+		
+		public void updateDataAsignado(String db, String table_name, String modif_columna, String campo_cambiado, String condicion, String primaryKey,String secondPrimaryKey, String condicion2) throws SQLException {
+		    try {
+	            String Queryd = "USE "+db+";";
+	            Statement stdb = connect.createStatement();
+	            stdb.executeUpdate(Queryd);
+
+	            String Query = "UPDATE "+table_name+" SET "+ modif_columna +" = '"+campo_cambiado+"' WHERE "+primaryKey+" = "+condicion+" AND "+secondPrimaryKey+" = "+condicion2;
+	            System.out.println(Query);
+	            Statement st = connect.createStatement();
+	            st.executeUpdate(Query);
+	            JOptionPane.showMessageDialog(null, "Registro modificado con éxito.");
+	        } catch (SQLException ex) {
+	            System.out.println(ex.getMessage());
+	            JOptionPane.showMessageDialog(null, "Error al modificar el registro especificado.");
+	        }
+		}
+		
 		public void deleteData(String db, String table_name, String primaryKey, int ID) throws SQLException {
 			 try {
 		            String Queryd = "USE "+db+";";
@@ -186,8 +204,8 @@ public class Conexion {
 	            java.sql.ResultSet resultSet;
 	            resultSet = st.executeQuery(Query);
 	            while (resultSet.next()) {
-	                text.add("Cientifico: "+ resultSet.getString("cientifico")+" "
-	                		+ "Proyecto: "+ resultSet.getString("proyecto"));
+	                text.add("Cientifico: "+ resultSet.getString("cientifico_dni")+" "
+	                		+ "Proyecto: "+ resultSet.getString("proyecto_id"));
 	            }
 
 	        } catch (SQLException ex) {

@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JPanel;
 
 import Modelo.Cientifico;
 import Vista.Vista;
@@ -14,7 +13,6 @@ import Vista.Vista;
 public class ControladorCientifico implements ActionListener {
 	private Cientifico cientifico;
 	private Vista vista;
-	private JPanel vista_create_cientifico, vista_delete_cientifico, vista_update_cientifico, vista_read_cientifico;
 	
 	public ControladorCientifico(Cientifico cientifico, Vista vista) {
 		this.cientifico=cientifico;

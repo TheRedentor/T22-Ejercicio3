@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JPanel;
 
 import Modelo.Proyecto;
 import Vista.Vista;
@@ -15,7 +14,6 @@ import Vista.Vista;
 public class ControladorProyecto implements ActionListener {
 	private Proyecto proyecto;
 	private Vista vista;
-	private JPanel vista_create_proyecto, vista_delete_proyecto, vista_update_proyecto, vista_read_proyecto;
 	
 	public ControladorProyecto(Proyecto proyecto, Vista vista) {
 		this.proyecto=proyecto;
