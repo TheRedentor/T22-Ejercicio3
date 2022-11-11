@@ -165,3 +165,4 @@ public class ControladorProyecto implements ActionListener {
 			this.vista.vista_delete.setVisible(false);
 		}
 	}
+}

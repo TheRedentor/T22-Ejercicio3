@@ -69,12 +69,14 @@ public class ControladorCientifico implements ActionListener {
 			vista.asignadoAButton.setVisible(false);
 		}
 		
+		
 		if(vista.boton_create_cientifico == evento.getSource()) {
 			try {
 				vista.vista_create_cientifico.setVisible(true);
 				vista.vista_delete_cientifico.setVisible(false);
 				vista.vista_update_cientifico.setVisible(false);
-				vista.vista_read_cientifico.setVisible(false);			
+				vista.vista_read_cientifico.setVisible(false);
+				
 			} catch (Exception e) {
 				System.out.println(e);
 			}
