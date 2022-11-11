@@ -108,61 +108,54 @@ public class ControladorProyecto implements ActionListener {
 		}
 		
 		if(vista.boton_guardar_proyecto == evento.getSource()) {
-			String nombre,apellido,fecha,direccion;
-			int dni;
+			String nombre,id;
+			int horas;
 			
-			dni=this.vista.createNombreField.getText();
-			apellido=this.vista.createApellidoField.getText();
-			direccion = this.vista.createDireccionField.getText();
-			dni=Integer.parseInt(this.vista.createDniField.getText());
-			fecha=this.vista.createFechaField.getText();
+			nombre=this.vista.createNombreField.getText();
+			horas=Integer.parseInt(this.vista.createHorasField.getText());
+			id=this.vista.createIdField.getText();
+
 			try {
-				this.modelo.create(nombre, apellido, direccion, dni, fecha);
+				this.proyecto.create(id,nombre, horas);
 			} catch (FileNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			this.vista.vista_create.setVisible(false);
+			this.vista.vista_create_proyecto.setVisible(false);
 		}
 		
-		if(vista.boton_guardar1 == evento.getSource()) {
+		if(vista.boton_guardar1_proyecto == evento.getSource()) {
 			
-			String nombre,apellido,fecha,direccion,id;
-			int dni;
+			String nombre,id;
+			int horas;
 			
-			nombre=this.vista.editNombreField.getText();
-			apellido=this.vista.editApellidoField.getText();
-			direccion = this.vista.editDireccionField.getText();
-			dni=Integer.parseInt(this.vista.editDniField.getText());
-			fecha=this.vista.editFechaField.getText();
-			id=this.vista.editIdField.getText();
+			nombre=this.vista.createNombreField.getText();
+			horas=Integer.parseInt(this.vista.createHorasField.getText());
+			id=this.vista.createIdField.getText();
 			
 			try {
-				this.modelo.update("nombre",nombre,id);
-				this.modelo.update("apellido",apellido,id);
-				this.modelo.update("direccion",direccion,id);
-				this.modelo.update("dni", String.valueOf(dni),id);
-				this.modelo.update("fecha",fecha,id);
+				this.proyecto.update("nombre",nombre,id,"id");
+				this.proyecto.update("horas",String.valueOf(horas),id,"id");
 			} catch (FileNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
-			this.vista.vista_update.setVisible(false);
+			this.vista.vista_update_proyecto.setVisible(false);
 		}
 		
-		if(vista.boton_borrar == evento.getSource()) {
+		if(vista.boton_borrar_proyecto == evento.getSource()) {
 			
-			int id;
+			String id;
 		
-			id=Integer.parseInt(this.vista.deleteIdField.getText());
+			id=this.vista.deleteIdField.getText();
 			try {
-				this.modelo.delete(id,"id");
+				this.proyecto.delete(id,"id");
 			} catch (FileNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			this.vista.vista_delete.setVisible(false);
+			this.vista.vista_delete_proyecto.setVisible(false);
 		}
 	}
 }
