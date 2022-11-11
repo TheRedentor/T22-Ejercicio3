@@ -77,6 +77,35 @@ public class Vista extends JFrame {
 		vista_escoger.setLayout(null);
 		vista_proyecto = new JPanel();
 		
+		JLabel lblNewLabel_10 = new JLabel("REGISTRO DE PROYECTOS");
+		vista_proyecto.add(lblNewLabel_10);
+		
+		JLabel lblNewLabel_9 = new JLabel("Opciones: ");
+		vista_proyecto.add(lblNewLabel_9);
+		
+		boton_create_proyecto = new JButton("Crear proyecto");
+		boton_create_proyecto.setBounds(48, 254, 97, 23);
+		vista_proyecto.add(boton_create_proyecto);
+		boton_create_proyecto.setVisible(false);
+		
+		boton_delete_proyecto = new JButton("Eliminar proyecto");
+		boton_delete_proyecto.setBounds(48, 312, 107, 23);
+		vista_proyecto.add(boton_delete_proyecto);
+		boton_delete_proyecto.setVisible(false);
+		
+		boton_read_proyecto = new JButton("Mostrar registro");
+		boton_read_proyecto.setBounds(48, 200, 109, 23);
+		vista_proyecto.add(boton_read_proyecto);
+		boton_read_proyecto.setVisible(false);
+		
+		
+		// BOTONES PANEL GENERAL PROYECTO
+		
+		boton_update_proyecto = new JButton("Actualizar proyecto");
+		boton_update_proyecto.setBounds(48, 149, 117, 23);
+		vista_proyecto.add(boton_update_proyecto);
+		boton_update_proyecto.setVisible(false);
+		
 		
 		
 		
@@ -230,29 +259,6 @@ public class Vista extends JFrame {
 		
 		vista_create_proyecto.setVisible(false);
 		
-		
-		// BOTONES PANEL GENERAL PROYECTO
-		
-		boton_update_proyecto = new JButton("Actualizar proyecto");
-		boton_update_proyecto.setBounds(48, 149, 117, 23);
-		vista_proyecto.add(boton_update_proyecto);
-		boton_update_proyecto.setVisible(false);
-		
-		boton_read_proyecto = new JButton("Mostrar registro");
-		boton_read_proyecto.setBounds(48, 200, 109, 23);
-		vista_proyecto.add(boton_read_proyecto);
-		boton_read_proyecto.setVisible(false);
-		
-		boton_delete_proyecto = new JButton("Eliminar proyecto");
-		boton_delete_proyecto.setBounds(48, 312, 107, 23);
-		vista_proyecto.add(boton_delete_proyecto);
-		boton_delete_proyecto.setVisible(false);
-		
-		boton_create_proyecto = new JButton("Crear proyecto");
-		boton_create_proyecto.setBounds(48, 254, 97, 23);
-		vista_proyecto.add(boton_create_proyecto);
-		boton_create_proyecto.setVisible(false);
-		
 		asignadoAButton = new JButton("Asignado a");
 		asignadoAButton.setBounds(271, 280, 89, 23);
 		vista_escoger.add(asignadoAButton);
@@ -267,12 +273,6 @@ public class Vista extends JFrame {
 		proyectoButton = new JButton("Proyecto");
 		proyectoButton.setBounds(271, 210, 89, 23);
 		vista_escoger.add(proyectoButton);
-		
-		JLabel lblNewLabel_9 = new JLabel("Opciones: ");
-		vista_proyecto.add(lblNewLabel_9);
-		
-		JLabel lblNewLabel_10 = new JLabel("REGISTRO DE PROYECTOS");
-		vista_proyecto.add(lblNewLabel_10);
 		
 		vista_proyecto.setBounds(0, 0, 627, 529);
 		vista_escoger.add(vista_proyecto);
