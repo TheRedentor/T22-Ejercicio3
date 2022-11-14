@@ -100,6 +100,26 @@ public class ControladorCientifico implements ActionListener {
 			}
 		}
 		
+		if(vista.boton_salir_create_cientifico == evento.getSource()) {
+			vista.vista_create_cientifico.setVisible(false);
+			vista.vista_cientifico.setVisible(true);
+		}
+		
+		if(vista.boton_salir_update_cientifico == evento.getSource()) {
+			vista.vista_update_cientifico.setVisible(false);
+			vista.vista_cientifico.setVisible(true);
+		}
+		
+		if(vista.boton_salir_delete_cientifico == evento.getSource()) {
+			vista.vista_delete_cientifico.setVisible(false);
+			vista.vista_cientifico.setVisible(true);
+		}
+		
+		if(vista.boton_salir_cientifico == evento.getSource()) {
+			vista.vista_read_cientifico.setVisible(false);
+			vista.vista_cientifico.setVisible(true);
+		}
+		
 		if(vista.boton_guardar_cientifico == evento.getSource()) {
 			String dni,nom_apels;
 			

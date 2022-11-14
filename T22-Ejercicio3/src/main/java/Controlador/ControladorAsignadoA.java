@@ -100,6 +100,26 @@ public class ControladorAsignadoA implements ActionListener {
 			}
 		}
 		
+		if(vista.boton_salir_create_asignado == evento.getSource()) {
+			vista.vista_create_asignado_a.setVisible(false);
+			vista.vista_asignado_a.setVisible(true);
+		}
+		
+		if(vista.boton_salir_update_asignado == evento.getSource()) {
+			vista.vista_update_asignado_a.setVisible(false);
+			vista.vista_asignado_a.setVisible(true);
+		}
+		
+		if(vista.boton_salir_delete_asignado == evento.getSource()) {
+			vista.vista_delete_asignado_a.setVisible(false);
+			vista.vista_asignado_a.setVisible(true);
+		}
+		
+		if(vista.boton_salir_asignado_a == evento.getSource()) {
+			vista.vista_read_asignado_a.setVisible(false);
+			vista.vista_asignado_a.setVisible(true);
+		}
+		
 		if(vista.boton_guardar_asignado_a == evento.getSource()) {
 			String cientifico_id,proyecto_id;
 			

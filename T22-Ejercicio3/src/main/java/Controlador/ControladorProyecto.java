@@ -87,6 +87,26 @@ public class ControladorProyecto implements ActionListener {
 			}
 		}
 		
+		if(vista.boton_salir_create_proyecto == evento.getSource()) {
+			vista.vista_create_proyecto.setVisible(false);
+			vista.vista_proyecto.setVisible(true);
+		}
+		
+		if(vista.boton_salir_update_proyecto == evento.getSource()) {
+			vista.vista_update_proyecto.setVisible(false);
+			vista.vista_proyecto.setVisible(true);
+		}
+		
+		if(vista.boton_salir_delete_proyecto == evento.getSource()) {
+			vista.vista_delete_proyecto.setVisible(false);
+			vista.vista_proyecto.setVisible(true);
+		}
+		
+		if(vista.boton_salir_proyecto == evento.getSource()) {
+			vista.vista_read_proyecto.setVisible(false);
+			vista.vista_proyecto.setVisible(true);
+		}
+		
 		if(vista.boton_read_proyecto == evento.getSource()) {
 			try {
 				vista.textAreaProyecto.setText(null);
