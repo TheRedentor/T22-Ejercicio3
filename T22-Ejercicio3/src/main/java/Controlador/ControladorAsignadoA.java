@@ -28,6 +28,10 @@ public class ControladorAsignadoA implements ActionListener {
 		this.vista.cientificoButton.addActionListener(this);
 		this.vista.proyectoButton.addActionListener(this);
 		this.vista.asignadoAButton.addActionListener(this);
+		this.vista.boton_salir_update_asignado.addActionListener(this);
+		this.vista.boton_salir_create_asignado.addActionListener(this);
+		this.vista.boton_salir_delete_asignado.addActionListener(this);
+		this.vista.boton_volver_asignado_a.addActionListener(this);
 	}
 
 	
@@ -40,6 +44,8 @@ public class ControladorAsignadoA implements ActionListener {
 			vista.cientificoButton.setVisible(false);
 			vista.proyectoButton.setVisible(false);
 			vista.asignadoAButton.setVisible(false);
+			
+			vista.boton_volver_asignado_a.setVisible(true);
 			
 			vista.boton_create_asignado_a.setVisible(true);
 			vista.boton_update_asignado_a.setVisible(true);
@@ -98,6 +104,22 @@ public class ControladorAsignadoA implements ActionListener {
 			} catch (Exception e) {
 				
 			}
+		}
+		
+		if(vista.boton_volver_asignado_a == evento.getSource()) {
+		    vista.vista_asignado_a.setVisible(false);
+
+		    //TODOS LOS BOTONES EN FALSE
+		    vista.boton_create_asignado_a.setVisible(false);
+		    vista.boton_delete_asignado_a.setVisible(false);
+		    vista.boton_read_asignado_a.setVisible(false);
+		    vista.boton_update_asignado_a.setVisible(false);
+		    vista.boton_volver_asignado_a.setVisible(false);
+
+		    //Los principales en true
+		    vista.cientificoButton.setVisible(true);
+		    vista.proyectoButton.setVisible(true);
+		    vista.asignadoAButton.setVisible(true);
 		}
 		
 		if(vista.boton_salir_create_asignado == evento.getSource()) {

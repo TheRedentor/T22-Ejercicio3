@@ -28,6 +28,10 @@ public class ControladorCientifico implements ActionListener {
 		this.vista.cientificoButton.addActionListener(this);
 		this.vista.proyectoButton.addActionListener(this);
 		this.vista.asignadoAButton.addActionListener(this);
+		this.vista.boton_salir_update_cientifico.addActionListener(this);
+		this.vista.boton_salir_create_cientifico.addActionListener(this);
+		this.vista.boton_salir_delete_cientifico.addActionListener(this);
+		this.vista.boton_volver_cientifico.addActionListener(this);
 	}
 
 	
@@ -40,6 +44,8 @@ public class ControladorCientifico implements ActionListener {
 			vista.cientificoButton.setVisible(false);
 			vista.proyectoButton.setVisible(false);
 			vista.asignadoAButton.setVisible(false);
+			
+			vista.boton_volver_cientifico.setVisible(true);
 			
 			vista.boton_create_cientifico.setVisible(true);
 			vista.boton_update_cientifico.setVisible(true);
@@ -99,6 +105,23 @@ public class ControladorCientifico implements ActionListener {
 				
 			}
 		}
+		
+		if(vista.boton_volver_cientifico == evento.getSource()) {
+			vista.vista_cientifico.setVisible(false);
+
+			//TODOS LOS BOTONES EN FALSE
+			    vista.boton_create_cientifico.setVisible(false);
+			    vista.boton_delete_cientifico.setVisible(false);
+			    vista.boton_read_cientifico.setVisible(false);
+			    vista.boton_update_cientifico.setVisible(false);
+			    vista.boton_volver_cientifico.setVisible(false);
+			    
+
+			    //Los principales en true
+			    vista.cientificoButton.setVisible(true);
+			    vista.proyectoButton.setVisible(true);
+			    vista.asignadoAButton.setVisible(true);
+			}
 		
 		if(vista.boton_salir_create_cientifico == evento.getSource()) {
 			vista.vista_create_cientifico.setVisible(false);

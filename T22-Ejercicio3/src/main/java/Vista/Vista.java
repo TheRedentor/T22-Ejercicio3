@@ -70,6 +70,10 @@ public class Vista extends JFrame {
 	public JButton boton_salir_update_proyecto;
 	public JButton boton_salir_delete_proyecto;
 	public JButton boton_salir_create_proyecto;
+	
+	public JButton boton_volver_cientifico;
+	public JButton boton_volver_proyecto;
+	public JButton boton_volver_asignado_a;
 
 	public Vista() {
 		
@@ -88,6 +92,11 @@ public class Vista extends JFrame {
 		vista_escoger.setLayout(null);
 		
 		vista_cientifico = new JPanel();
+		
+		boton_volver_cientifico = new JButton("Volver");
+		boton_volver_cientifico.setBounds(10, 495, 89, 23);
+		vista_cientifico.add(boton_volver_cientifico);
+		boton_volver_cientifico.setVisible(false);
 		
 		boton_create_cientifico = new JButton("Crear científico");
 		boton_create_cientifico.setBounds(48, 254, 97, 23);
@@ -257,6 +266,12 @@ public class Vista extends JFrame {
 		vista_delete_cientifico.setVisible(false);
 		vista_asignado_a = new JPanel();
 		
+		boton_volver_asignado_a = new JButton("Volver");
+		boton_volver_asignado_a.setBounds(10, 495, 89, 23);
+		vista_asignado_a.add(boton_volver_asignado_a);
+		boton_volver_asignado_a.setVisible(false);
+	
+		
 		boton_create_asignado_a = new JButton("Crear asignado");
 		boton_create_asignado_a.setBounds(48, 254, 97, 23);
 		vista_asignado_a.add(boton_create_asignado_a);
@@ -279,9 +294,6 @@ public class Vista extends JFrame {
 		boton_update_asignado_a.setBounds(48, 149, 117, 23);
 		vista_asignado_a.add(boton_update_asignado_a);
 		boton_update_asignado_a.setVisible(false);
-		
-		
-		
 		
 		
 		// ELEMENTOS VISTA CREATE ASIGNADO_A
@@ -452,6 +464,11 @@ public class Vista extends JFrame {
 		vista_update_asignado_a.setVisible(false);
 		vista_proyecto = new JPanel();
 		
+		boton_volver_proyecto = new JButton("Volver");
+		boton_volver_proyecto.setBounds(10, 495, 89, 23);
+		vista_proyecto.add(boton_volver_proyecto);
+		boton_volver_proyecto.setVisible(false);
+		
 		boton_read_proyecto = new JButton("Mostrar registro");
 		boton_read_proyecto.setBounds(48, 200, 109, 23);
 		vista_proyecto.add(boton_read_proyecto);
@@ -474,12 +491,6 @@ public class Vista extends JFrame {
 		boton_create_proyecto.setBounds(48, 254, 97, 23);
 		vista_proyecto.add(boton_create_proyecto);
 		boton_create_proyecto.setVisible(false);
-		
-		
-		
-		
-		
-		
 		
 		
 		// ELEMENTOS VISTA CREATE PROYECTO
@@ -589,8 +600,6 @@ public class Vista extends JFrame {
 		vista_read_proyecto.add(boton_salir_proyecto);
 		
 		vista_read_proyecto.setVisible(false);
-		
-		
 		
 		
 		
